@@ -9,3 +9,9 @@ jobs:
       - checkout
       - npm run install
       - npm run test  
+
+workflows:
+  build_and_test:
+    jobs:
+      - build
+
