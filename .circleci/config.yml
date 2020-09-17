@@ -1,9 +1,10 @@
 version: 2.1
-orbs:
-  node: circleci/node@3.0.0
+
 jobs:
   build:
-    machine:
-      steps:
-        - npm install
-        - npm run test
+    docker: 
+      - image: 14.11.0-alpine3.10
+    steps:
+      - checkout
+      - npm run install
+      - npm run test  
