@@ -4,6 +4,7 @@ jobs:
   build:
     docker: 
       - image: 14.11.0-alpine3.10
+    working_directory: ~/repo
     steps:
       - checkout
       - npm run install
