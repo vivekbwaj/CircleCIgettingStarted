@@ -1,10 +1,10 @@
 version: 2.1
 
 jobs:
-  build:
+  jesttest:
     docker: 
       - image: circleci/node:10
-    working_directory: ~/repo
+    working_directory: ~/myapp
     steps:
       - checkout
       - run:
@@ -13,3 +13,8 @@ jobs:
       - run:
           name: Run jest tests
           command: npm run test    
+
+workflows:
+  build_and_test:
+    jobs:
+      - jesttest         
